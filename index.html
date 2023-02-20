@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-Carosello</title>
+    <script src="https://kit.fontawesome.com/c5d4023dee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+</head>
+
+<body>
+    <!-- CREO UN COLLEGAMENO VUE.JS ,MONTANTANDO TUTTO CIO CREATO IN CREATE APP DI JS-->
+    <!-- CREO ELEMENTI -->
+    <!-- DO LE CLASSE PER I COLLEGAMENTI -->
+    <!-- CREO UN CICLO V-FOR CON VUE -->
+    <!-- CREANDO UNA CONDIZIONE CHE VARIA IN BASE ALL'INDICE , CHE VIENE CAMBIATO ALL'EVENTO CLICK DELLE NOSTRE FRECCIE -->
+
+    <div id="app">
+        <div class="carosello">
+            <div class="slide" v-for="(image, index) in images" :class="{ 'active': index === currentSlideIndex }">
+                <img :src="image.image">
+                <h3 class="title">{{ image.title }}</h3>
+                <p class="text">{{ image.text }}</p>
+            </div>
+            <div class="arrows">
+                <span class="arrow-general arrow-left" @click="prevSlide">&#10094;</span>
+                <span class="arrow-general arrow-right" @click="nextSlide">&#10095;</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<script src="./js/app.js"></script>
+</body>
+
+</html>
